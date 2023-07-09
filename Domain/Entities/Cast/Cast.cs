@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities.Casts
 {
-    public class Cast
+    public class Cast : BaseEntity
     {
-        public int Id { get; set; }
         public int PersonId { get; set; }
         public string CharName { get; set; }
         public int CastOrder { get; set; }

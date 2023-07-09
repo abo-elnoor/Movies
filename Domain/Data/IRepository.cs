@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace Domain.Data
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<T> where T : BaseEntity
     {
-        IList<T> Table { get; }
-        T GetById(object id);
-        T Insert(T entity);
-        void Update(T entity);
-        void Delete(T entity);
+        Task<IReadOnlyList<T>> GetAllAsync();
+        IQueryable<T> Table { get; }
+        Task<T> GetByIdAsync(int id);
+        Task<T> InsertAsync(T entity);
+        Task<int> UpdateAsync(T entity);
+        Task<int> DeleteAsync(T entity);
     }
 }

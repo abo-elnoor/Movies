@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Entities.Cast
+namespace Domain.Entities.Casts
 {
     public class CustomMovieCast
     {

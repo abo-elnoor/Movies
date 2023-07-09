@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities.Movies
 {
-    public class Movie
+    public class Movie :BaseEntity
     {
-        public int Id { get; set; }
         public string Title { get; set; }
         public int DirectorId { get; set; }
     }

@@ -1,4 +1,4 @@
-﻿using Domain.Entities.Cast;
+﻿using Domain.Entities.Casts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
