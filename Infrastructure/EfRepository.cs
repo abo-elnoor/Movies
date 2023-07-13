@@ -6,7 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using Infrastructure.Data;
 
 namespace Infrastructure
 {

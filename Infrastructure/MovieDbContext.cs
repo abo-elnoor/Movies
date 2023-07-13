@@ -10,14 +10,13 @@ using Domain.Entities.Persons;
 using Domain.Entities.Casts;
 using System.Configuration;
 
-namespace Infrastructure.Data
+namespace Infrastructure
 {
     public class MovieDbContext : DbContext, IDbContext
     {
         public MovieDbContext(DbContextOptions<MovieDbContext> options) : base(options) { }
 
-
-        public DbSet<TEntity> Set<TEntity>() where TEntity : BaseEntity
+        public new DbSet<TEntity> Set<TEntity>() where TEntity : BaseEntity
         {
             return base.Set<TEntity>();
         }

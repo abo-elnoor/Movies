@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 using Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Data
+namespace Infrastructure
 {
     public interface IDbContext
     {
         DbSet<TEntity> Set<TEntity>() where TEntity : BaseEntity;
-        int SaveChanges();
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default);
     }
 }
