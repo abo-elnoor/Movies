@@ -2,6 +2,8 @@
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Infrastructure.Migrations
 {
     /// <inheritdoc />
@@ -53,6 +55,43 @@ namespace Infrastructure.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Person", x => x.Id);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Cast",
+                columns: new[] { "Id", "CastOrder", "CharGender", "CharName", "MovieId", "PersonId" },
+                values: new object[,]
+                {
+                    { 1, 1, 'F', "Cast1", 1, 3 },
+                    { 2, 1, 'M', "Cast2", 1, 4 },
+                    { 3, 2, 'F', "Cast3", 1, 5 },
+                    { 4, 1, 'F', "Cast4", 2, 6 },
+                    { 5, 2, 'M', "Cast5", 2, 7 },
+                    { 6, 3, 'M', "Cast6", 2, 8 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Movie",
+                columns: new[] { "Id", "DirectorId", "Title" },
+                values: new object[,]
+                {
+                    { 1, 1, "Movie1" },
+                    { 2, 2, "Movie2" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Person",
+                columns: new[] { "Id", "Gender", "Name" },
+                values: new object[,]
+                {
+                    { 1, 'F', "Director1" },
+                    { 2, 'M', "Director2" },
+                    { 3, 'F', "Person3" },
+                    { 4, 'M', "Person4" },
+                    { 5, 'M', "Person5" },
+                    { 6, 'F', "Person6" },
+                    { 7, 'M', "Person7" },
+                    { 8, 'M', "Person8" }
                 });
         }
 
