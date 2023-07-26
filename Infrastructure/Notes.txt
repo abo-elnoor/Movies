@@ -2,5 +2,6 @@
 update-database init -Context SqliteDbContext
 
 init ==> the migration name
--Context ==> if i have more than context class
+-Context ==> option if i have more than context class
+SqliteDbContext ==> name of DbContext class
 ---------------------------------------------------------------

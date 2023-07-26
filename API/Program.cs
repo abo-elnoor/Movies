@@ -9,10 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<MovieDbContext>(m => m.UseSqlServer(builder.Configuration.GetConnectionString("MovieDB")), ServiceLifetime.Singleton);
+//builder.Services.AddDbContext<MovieDbContext>(m => m.UseSqlServer(builder.Configuration.GetConnectionString("MovieDB")), ServiceLifetime.Singleton);
 
 builder.Services.AddDbContext<SqliteDbContext>(m => m.UseSqlite(builder.Configuration.GetConnectionString("MovieDatabase")), ServiceLifetime.Singleton);
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
