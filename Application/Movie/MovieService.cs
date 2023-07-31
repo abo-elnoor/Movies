@@ -12,6 +12,8 @@ namespace Application.Movies
 {
     public class MovieService : IMovieService
     {
+        public const string Movie_KEY = "Movie-{0}";
+
         private readonly IRepository<Movie> _MovieRepository;
         private readonly IRepository<Cast> _CastRepository;
         private readonly IRepository<Person> _PersonRepository;

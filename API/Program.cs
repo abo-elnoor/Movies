@@ -1,4 +1,5 @@
 using Application.Movies;
+using Domain.Caching;
 using Domain.Data;
 using Infrastructure;
 using Microsoft.EntityFrameworkCore;
@@ -18,6 +19,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 builder.Services.AddScoped<IDbContext, SqliteDbContext>();
+builder.Services.AddScoped<ICacheManager, MemoryCacheManager>();
 builder.Services.AddScoped<IMovieService, MovieService>();
 var app = builder.Build();
 
