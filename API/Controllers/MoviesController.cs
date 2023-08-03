@@ -21,16 +21,16 @@ namespace API
 
         [Route("Get")]
         [HttpGet]
-        public ActionResult<IList<CustomMovie>> Get()
+        public ActionResult Get()
         {
             return Ok(_cacheManager.Get(string.Format(MovieService.Movie_KEY, 1), () => this._movieService.GetAllMovies()));
         }
 
         [Route("DataFromCache")]
         [HttpGet]
-        public ActionResult<IList<CustomMovie>> DataFromCache()
+        public ActionResult DataFromCache()
         {
-            return Ok(_cacheManager.Get(string.Format(MovieService.Movie_KEY, 1)));
+            return Ok(_cacheManager.Get<IList<CustomMovie>>(string.Format(MovieService.Movie_KEY, 1)));
         }
 
     }
